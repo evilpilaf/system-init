@@ -1,0 +1,59 @@
+[core]
+	editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
+	autocrlf = true
+	longpaths = true
+	commitGraph = true
+
+[i18n]
+	filesEncoding = utf-8
+
+[user]
+	email = mauriciod73@gmail.com
+	name = evilpilaf
+
+[diff]
+	guitool = bc3
+
+[difftool "bc3"]
+	path = C:/Program Files/Beyond Compare 4/BComp.exe
+	cmd = \"\" \"$LOCAL\" \"$REMOTE\"
+
+[merge]
+	guitool = bc3
+
+[mergetool "bc3"]
+	path = C:/Program Files/Beyond Compare 4/BComp.exe
+	cmd = \"C:/Program Files/Beyond Compare 4/BComp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+
+[pull]
+	rebase = false
+
+[fetch]
+	prune = true
+
+[rebase]
+	autoStash = true
+
+[alias]
+	pum = pull --ff-only upstream master
+	pu = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+	gud = web--browse https://git-scm.com/
+	sln = !start $(git f sln)
+	co = checkout
+	st = status
+	fuckit = !sh -c 'git fetch upstream && git checkout master && git reset --hard upstream/master && git push origin master --force' -
+
+[init]
+	defaultBranch = main
+
+[safe]
+	directory = D:/dev/
+
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+
+[push]
+	autoSetupRemote = true
+
+[help]
+	autocorrect = 20
